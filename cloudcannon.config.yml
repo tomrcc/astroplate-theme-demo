@@ -1,0 +1,92 @@
+collections_config:
+  pages:
+    path: ''
+    name: Pages
+    icon: wysiwyg
+  src_config:
+    path: src/config
+    name: Src Config
+    icon: roofing
+  src_content_about_english:
+    path: src/content/about/english
+    name: Src Content About English
+    icon: content_paste_go
+  src_content_about_french:
+    path: src/content/about/french
+    name: Src Content About French
+    icon: content_paste_search
+  src_content_authors_english:
+    path: src/content/authors/english
+    name: Src Content Authors English
+    icon: content_paste_search
+  src_content_authors_french:
+    path: src/content/authors/french
+    name: Src Content Authors French
+    icon: content_paste_search
+  src_content_blog_english:
+    path: src/content/blog/english
+    name: Src Content Blog English
+    icon: content_paste_go
+  src_content_blog_french:
+    path: src/content/blog/french
+    name: Src Content Blog French
+    icon: content_paste_search
+  src_content_contact_english:
+    path: src/content/contact/english
+    name: Src Content Contact English
+    icon: content_paste_go
+  src_content_contact_french:
+    path: src/content/contact/french
+    name: Src Content Contact French
+    icon: content_paste_search
+  src_content_homepage_english:
+    path: src/content/homepage/english
+    name: Src Content Homepage English
+    icon: content_paste_go
+  src_content_homepage_french:
+    path: src/content/homepage/french
+    name: Src Content Homepage French
+    icon: contact_emergency
+  src_content_pages_english:
+    path: src/content/pages/english
+    name: Src Content Pages English
+    icon: content_paste_go
+  src_content_pages_french:
+    path: src/content/pages/french
+    name: Src Content Pages French
+    icon: content_paste_search
+  src_content_sections_english:
+    path: src/content/sections/english
+    name: Src Content Sections English
+    icon: content_paste_search
+  src_content_sections_french:
+    path: src/content/sections/french
+    name: Src Content Sections French
+    icon: content_paste_search
+  src_i18n:
+    path: src/i18n
+    name: Src I18n
+    icon: archive
+paths:
+  static: static
+  uploads: static/uploads
+timezone: Pacific/Auckland
+markdown:
+  engine: commonmark
+  options:
+    gfm: true
+    linkify: false
+    table: false
+    strikethrough: false
+    subscript: false
+    superscript: false
+    heading_ids: false
+    breaks: false
+    xhtml: false
+    attributes: false
+    typographer: false
+    treat_indentation_as_code: true
+_snippets_imports:
+  hugo:
+    exclude:
+      - hugo_instagram
