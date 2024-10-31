@@ -1,10 +1,9 @@
 ---
 import ImageMod from "@/components/ImageMod.astro";
 import Base from "@/layouts/Base.astro";
-import { getListPage } from "@/lib/contentParser.astro";
-import { supportedLang } from "@/lib/utils/languageParser";
+import { supportedLang, getTranslations } from "@/lib/utils/languageParser";
 import { markdownify } from "@/lib/utils/textConverter";
-import type { ContentEntryMap } from "astro:content";
+import { getEntryBySlug } from "astro:content";
 
 export function getStaticPaths() {
   const paths = supportedLang.map((lang) => ({
@@ -14,18 +13,20 @@ export function getStaticPaths() {
 }
 
 const { lang } = Astro.params;
-const about = await getListPage("about", lang as keyof ContentEntryMap);
+const about =
+  lang === "fr"
+    ? await getEntryBySlug("pages", "french/about")
+    : await getEntryBySlug("pages", "english/about");
 
-const { Content } = await about[0].render();
-const { title, description, meta_title, image } = about[0].data;
+const { Content } = await about.render();
+const { title, description, meta_title, image } = about.data;
 ---
 
 <Base
   title={title}
   meta_title={meta_title}
   description={description}
-  image={image}
->
+  image={image}>
   <section class="section-sm">
     <div class="container">
       <div class="row justify-center">

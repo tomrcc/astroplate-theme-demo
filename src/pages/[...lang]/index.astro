@@ -1,13 +1,14 @@
 ---
 import ImageMod from "@/components/ImageMod.astro";
 import Base from "@/layouts/Base.astro";
-import { getListPage, getSinglePage } from "@/lib/contentParser.astro";
+import { getSinglePage } from "@/lib/contentParser.astro";
 import { supportedLang } from "@/lib/utils/languageParser";
 import { markdownify } from "@/lib/utils/textConverter";
 import CallToAction from "@/partials/CallToAction.astro";
 import Testimonial from "@/partials/Testimonial.astro";
 import type { Feature } from "@/types";
 import type { ContentEntryMap } from "astro:content";
+import { getEntryBySlug } from "astro:content";
 import { FaCheck } from "react-icons/fa";
 
 export function getStaticPaths() {
@@ -18,8 +19,12 @@ export function getStaticPaths() {
 }
 
 const { lang } = Astro.params;
-const homepage = await getListPage("homepage", lang as keyof ContentEntryMap);
-const { banner, features } = homepage[0].data;
+const homepage =
+  lang === "fr"
+    ? await getEntryBySlug("pages", "french")
+    : await getEntryBySlug("pages", "english");
+
+const { banner, features } = homepage.data;
 
 const testimonial = await getSinglePage(
   "sections",
@@ -53,8 +58,7 @@ const call_to_action = await getSinglePage(
                 target={
                   banner.button.link.startsWith("http") ? "_blank" : "_self"
                 }
-                rel="noopener"
-              >
+                rel="noopener">
                 {banner.button.label}
               </a>
             )
@@ -85,8 +89,7 @@ const call_to_action = await getSinglePage(
         <div class="container">
           <div class="row items-center justify-between">
             <div
-              class={`mb:md-0 mb-6 md:col-5 ${index % 2 !== 0 && "md:order-2"}`}
-            >
+              class={`mb:md-0 mb-6 md:col-5 ${index % 2 !== 0 && "md:order-2"}`}>
               <ImageMod
                 src={feature.image}
                 height={480}

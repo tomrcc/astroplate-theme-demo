@@ -38,16 +38,6 @@ const authorsCollection = defineCollection({
   }),
 });
 
-// Pages collection schema
-const pagesCollection = defineCollection({
-  schema: z.object({
-    title: z.string(),
-    meta_title: z.string().optional(),
-    description: z.string().optional(),
-    image: z.string().optional(),
-    draft: z.boolean().optional(),
-  }),
-});
 
 // Contact collection schema
 const contactCollection = defineCollection({
@@ -96,15 +86,31 @@ const featureSchema = z.object({
   }),
 });
 
+// // Content collection schema
+// const contentCollection = defineCollection({
+//   schema: contentSchema,
+// });
+
+
+// Pages collection schema
+const pageSchema = z.object({
+  title: z.string(),
+  meta_title: z.string().optional(),
+  description: z.string().optional(),
+  image: z.string().optional(),
+  draft: z.boolean().optional(),
+});
+  
+
 // Content schema (for the main content structure with banner and features)
 const contentSchema = z.object({
   banner: bannerSchema,
   features: z.array(featureSchema),
 });
 
-// Content collection schema
-const contentCollection = defineCollection({
-  schema: contentSchema,
+
+const pagesCollection = defineCollection({
+  schema: z.union([contentSchema, pageSchema]),
 });
 
 // Testimonial schema
@@ -138,7 +144,6 @@ export const collections = {
   pages: pagesCollection,
   contact: contactCollection,
   about: aboutCollection,
-  content: contentCollection,
   testimonials: testimonialsSchema,
   callToAction: callToActionSchema,
 };
