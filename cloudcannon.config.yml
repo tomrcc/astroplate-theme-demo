@@ -1,7 +1,7 @@
 collections_config:
   data:
     path: src/config
-    name: Data
+    name: Config data
     icon: roofing
   authors-en:
     path: src/content/authors/english
@@ -27,21 +27,25 @@ collections_config:
     path: src/content/pages/english
     url: '/en/[slug]/'
     name: Pages
+    _enabled_editors:
+      - visual
     icon: cottage
   pages-fr:
     path: src/content/pages/french
     url: '/fr/[slug]/'
     name: Pages (Fr)
+    _enabled_editors:
+      - visual
     icon: cottage
   sections-en:
     path: src/content/sections/english
-    name: Sections
+    name: CTA & Testimonial Data
     _enabled_editors:
       - data
     icon: content_paste_search
   sections-fr:
     path: src/content/sections/french
-    name: Sections (Fr)
+    name: CTA & Testimonial Data (Fr)
     _enabled_editors:
       - data
     icon: content_paste_search
@@ -52,6 +56,25 @@ collections_config:
 paths:
   static: public
   uploads: public/images
+
+collection_groups:
+  - heading: English pages
+    collections:
+      - authors-en
+      - blog-en
+      - pages-en
+  - heading: French pages
+    collections:
+      - authors-fr
+      - blog-fr
+      - pages-fr
+  - heading: Data
+    collections:
+      - sections-en
+      - sections-fr
+      - data
+      - translations
+
 timezone: Pacific/Auckland
 markdown:
   engine: commonmark
