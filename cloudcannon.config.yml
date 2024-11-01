@@ -5,33 +5,33 @@ collections_config:
     icon: roofing
   authors-en:
     path: src/content/authors/english
-    url: '/en/authors/[slug]'
+    url: '/en/authors/[slug]/'
     name: Authors 
     icon: person
   authors-fr:
     path: src/content/authors/french
-    url: '/fr/authors/[slug]'
-    name: Authors (French)
+    url: '/fr/authors/[slug]/'
+    name: Authors (Fr)
     icon: person
   blog-en:
     path: src/content/blog/english
-    url: '/en/blog/[slug]'
+    url: '/en/blog/[slug]/'
     name: Blog 
     icon: newspaper
   blog-fr:
     path: src/content/blog/french
-    url: '/fr/blog/[slug]'
-    name: Blog (French)
+    url: '/fr/blog/[slug]/'
+    name: Blog (Fr)
     icon: newspaper
   pages-en:
     path: src/content/pages/english
-    url: '/en/[slug]'
+    url: '/en/[slug]/'
     name: Pages
     icon: cottage
   pages-fr:
     path: src/content/pages/french
-    url: '/fr/[slug]'
-    name: Pages
+    url: '/fr/[slug]/'
+    name: Pages (Fr)
     icon: cottage
   sections-en:
     path: src/content/sections/english
@@ -41,7 +41,7 @@ collections_config:
     icon: content_paste_search
   sections-fr:
     path: src/content/sections/french
-    name: Sections
+    name: Sections (Fr)
     _enabled_editors:
       - data
     icon: content_paste_search
