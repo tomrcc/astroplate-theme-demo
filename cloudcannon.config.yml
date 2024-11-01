@@ -3,22 +3,47 @@ collections_config:
     path: src/config
     name: Data
     icon: roofing
-  authors:
-    path: src/content/authors
+  authors-en:
+    path: src/content/authors/english
+    url: '/en/authors/[slug]'
     name: Authors 
     icon: person
-  blog:
-    path: src/content/blog
+  authors-fr:
+    path: src/content/authors/french
+    url: '/fr/authors/[slug]'
+    name: Authors (French)
+    icon: person
+  blog-en:
+    path: src/content/blog/english
+    url: '/en/blog/[slug]'
     name: Blog 
     icon: newspaper
-  pages:
-    path: src/content/pages
-    url: '[relative_base_path|truncate=2]/[slug]'
+  blog-fr:
+    path: src/content/blog/french
+    url: '/fr/blog/[slug]'
+    name: Blog (French)
+    icon: newspaper
+  pages-en:
+    path: src/content/pages/english
+    url: '/en/[slug]'
     name: Pages
     icon: cottage
-  sections:
-    path: src/content/sections
+  pages-fr:
+    path: src/content/pages/french
+    url: '/fr/[slug]'
+    name: Pages
+    icon: cottage
+  sections-en:
+    path: src/content/sections/english
     name: Sections
+    _enabled_editors:
+      - data
+    icon: content_paste_search
+  sections-fr:
+    path: src/content/sections/french
+    name: Sections
+    _enabled_editors:
+      - data
     icon: content_paste_search
   translations:
     path: src/i18n
