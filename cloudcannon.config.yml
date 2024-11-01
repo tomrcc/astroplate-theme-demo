@@ -13,6 +13,7 @@ collections_config:
     icon: newspaper
   pages:
     path: src/content/pages
+    url: '[slug]'
     name: Pages
     icon: cottage
   sections:
